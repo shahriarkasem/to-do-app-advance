@@ -1,3 +1,4 @@
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Routes} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,12 +8,19 @@ import CompletedTasks from './components/pages/CompletedTasks/CompletedTasks';
 import Home from './components/pages/Home/Home';
 import ToDo from './components/pages/ToDo.js/ToDo';
 import Login from './components/shared/Login';
+import Navbar from './components/shared/Navbar';
 import RequireAuth from './components/shared/RequireAuth';
 import SignUp from './components/shared/SignUp';
+import auth from './firebase.init';
 
 function App() {
+  const [user] = useAuthState(auth);
+
   return (
     <section>
+      {
+        user && <Navbar></Navbar>
+      }
      <Routes>
       <Route path='/' element={
         <RequireAuth>
