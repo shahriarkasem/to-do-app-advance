@@ -9,7 +9,7 @@ const TaskList = ({task, index, handleComplete, handleDelete}) => {
         <td>{description}</td>
         <td className='text-center'>
           {
-            (complete === "Completed") ?
+            (complete === true) ?
             <p className='btn btn-xs btn-success btn-outline btn-disabled'>Completed</p>
             :
             <button onClick={() => handleComplete(_id)} className='btn btn-xs btn-success btn-outline'>Complete</button>

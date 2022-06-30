@@ -14,7 +14,7 @@ const ToDo = () => {
     const onSubmit = (data, e) => {
         const description = data.description;
         const email = user.email;
-        const complete = 'NotCompleted';
+        const complete = false;
         const newTask = { description, email, complete };
 
         fetch('http://localhost:5000/add', {
@@ -38,7 +38,7 @@ const ToDo = () => {
     };
 
     const handleComplete = (id) => {
-        const complete = 'Completed';
+        const complete = true;
 
         fetch(`http://localhost:5000/update`, {
             method: "PATCH",
