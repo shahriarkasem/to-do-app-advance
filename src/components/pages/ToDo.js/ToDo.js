@@ -17,7 +17,7 @@ const ToDo = () => {
         const complete = false;
         const newTask = { description, email, complete };
 
-        fetch('http://localhost:5000/add', {
+        fetch('https://morning-brook-82876.herokuapp.com/add', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -40,7 +40,7 @@ const ToDo = () => {
     const handleComplete = (id) => {
         const complete = true;
 
-        fetch(`http://localhost:5000/update`, {
+        fetch(`https://morning-brook-82876.herokuapp.com/update`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json',
@@ -60,7 +60,7 @@ const ToDo = () => {
             })
     }
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/delete/note/${id}`, {
+        fetch(`https://morning-brook-82876.herokuapp.com/delete/note/${id}`, {
             method: "DELETE",
         })
             .then(res => res.json())

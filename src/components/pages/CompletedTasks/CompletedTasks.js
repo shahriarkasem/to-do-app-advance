@@ -12,7 +12,7 @@ const CompletedTasks = () => {
   const handleComplete = (id) => {
     const complete = false;
 
-    fetch(`http://localhost:5000/update`, {
+    fetch(`https://morning-brook-82876.herokuapp.com/update`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -30,7 +30,7 @@ const CompletedTasks = () => {
     });
   };
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/delete/note/${id}`, {
+    fetch(`https://morning-brook-82876.herokuapp.com/delete/note/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
