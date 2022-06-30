@@ -6,7 +6,9 @@ import Calendar from './components/pages/Calendar/Calendar';
 import CompletedTasks from './components/pages/CompletedTasks/CompletedTasks';
 import Home from './components/pages/Home/Home';
 import ToDo from './components/pages/ToDo.js/ToDo';
+import Login from './components/shared/Login';
 import RequireAuth from './components/shared/RequireAuth';
+import SignUp from './components/shared/SignUp';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
           <CompletedTasks></CompletedTasks>
         </RequireAuth>
       }></Route>
+      <Route path='/login' element={<Login></Login>}></Route>
+      <Route path='/signup' element={<SignUp></SignUp>}></Route>
      </Routes>
      <ToastContainer></ToastContainer>
     </section>
