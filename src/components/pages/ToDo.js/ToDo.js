@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useNotes from '../../hooks/useNotes';
-import TaskList from '../TaskList';
+import TaskList from '../TaskList/TaskList';
 
 const ToDo = () => {
     const [user] = useAuthState(auth);
