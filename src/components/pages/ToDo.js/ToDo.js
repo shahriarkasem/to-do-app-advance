@@ -12,10 +12,10 @@ const ToDo = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
-        const name = data.name;
         const description = data.description;
         const email = user.email;
-        const newTask = { name, description, email };
+        const complete = 'NotCompleted';
+        const newTask = { description, email, complete };
 
         fetch('http://localhost:5000/add', {
             method: 'POST',
@@ -81,8 +81,7 @@ const ToDo = () => {
             <h3 className='mt-5 text-lg font-bold'>Hello, {user?.displayName}</h3>
             <h1 className='text-info text-2xl text-center font-bold mb-5'><i>Welcome to To Do app</i></h1>
             <form className='flex flex-col justify-center items-center mx-2' onSubmit={handleSubmit(onSubmit)}>
-                <input className='border-2 p-2 my-1 w-full md:w-1/2 rounded-lg' placeholder='Name' {...register("name")} required />
-                <textarea rows={2} className='border-2 p-2 my-1 w-full md:w-1/2 rounded-lg' placeholder='Description' {...register("description")} required />
+                <input className='border-2 p-2 my-1 w-full md:w-1/2 rounded-lg' placeholder='Description' {...register("description")} required />
                 <input className='btn btn-info btn-outline border py-1 px-3 text-white mt-2' type="submit" value='Add task' />
             </form>
             <div className='my-5'>

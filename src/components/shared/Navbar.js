@@ -10,7 +10,7 @@ const Navbar = () => {
   const menu = (
     <>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to='/'>To Do</Link>
       </li>
       <li>
         <Link to='/calendar'>Calendar</Link>
