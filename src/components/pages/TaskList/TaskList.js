@@ -22,7 +22,9 @@ const TaskList = ({ task, handleComplete, handleDelete }) => {
               class="radio radio-accent"
             />
           )}
-          <p className="m-4">{description}</p>
+          <div className="">
+            <p className="m-4 break-all">{description}</p>
+          </div>
         </div>
         <button
           onClick={() => handleDelete(_id)}
