@@ -85,22 +85,12 @@ const ToDo = () => {
                 <input className='btn btn-info btn-outline border py-1 px-3 text-white mt-2' type="submit" value='Add task' />
             </form>
             <div className='my-5'>
-                <h1 className='text-center font-bold text-3xl my-1'>Your task list are below</h1>
+                <h1 className='text-center font-bold text-3xl my-3'>Your task list are below</h1>
                 <div className="overflow-x-auto">
                     {
                         (notes?.length >= 1) &&
-                        <table className="table w-3/4 lg mx-auto">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th className='text-center'>Complete</th>
-                                    <th className='text-center'>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
 
+                            <>
                                 {notes &&
                                     notes.map((t, index) => <TaskList
                                         key={t._id}
@@ -111,8 +101,8 @@ const ToDo = () => {
                                     ></TaskList>)
                                 }
 
-                            </tbody>
-                        </table>
+                            </>
+
                     }
                     {
                         (notes?.length === 0) &&
