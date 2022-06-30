@@ -11,7 +11,7 @@ const Footer = () => {
           <p>Copyright © {currentYear} - All right reserved</p>
         </div>
         <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-            <p className="font-bold ">Follow us on : </p>
+          <p className="font-bold ">Follow us on : </p>
           <a target="_blank" href="https://twitter.com">
             <svg
               xmlns="http://www.w3.org/2000/svg"
