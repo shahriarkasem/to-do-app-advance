@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import useNotes from "../../hooks/useNotes";
 import TaskList from "../TaskList/TaskList";
-import { useQuery } from "react-query";
 
 const ToDo = () => {
   const [user] = useAuthState(auth);
