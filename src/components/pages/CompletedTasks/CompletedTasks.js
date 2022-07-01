@@ -61,7 +61,7 @@ const CompletedTasks = () => {
     const id = editTask?._id;
     const description = newDescription;
 
-    fetch(`http://localhost:5000/update/note`, {
+    fetch(`https://morning-brook-82876.herokuapp.com/update/note`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
