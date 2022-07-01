@@ -62,6 +62,7 @@ const CompletedTasks = () => {
                     task={t}
                     handleComplete={handleComplete}
                     handleDelete={handleDelete}
+                    refetch={refetch}
                   ></TaskList>
                 ))}
             </>
