@@ -24,7 +24,7 @@ const TaskList = ({ task, handleComplete, handleDelete, refetch, setEditTask }) 
             />
           )}
           <div className="">
-            <p className="m-4 break-all">{description}</p>
+            <p className="m-4 break-words text-start">{description}</p>
           </div>
         </div>
         <div className="flex flex-col">
