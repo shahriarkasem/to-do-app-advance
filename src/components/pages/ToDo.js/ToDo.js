@@ -159,13 +159,13 @@ const ToDo = () => {
         </div>
       </div>
       <div>
-        <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-        <div class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box">
+        <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+        <div className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
             <label
               onClick={() => setEditTask(null)}
-              for="my-modal-6"
-              class="btn btn-sm btn-circle btn-error absolute right-2 top-2"
+              htmlFor="my-modal-6"
+              className="btn btn-sm btn-circle btn-error absolute right-2 top-2"
             >
               ✕
             </label>
@@ -186,8 +186,8 @@ const ToDo = () => {
                 onClick={updateTaskInfo}
               >
                 <label
-                  for="my-modal-6"
-                  class="btn btn-xs btn-outline btn-success"
+                  htmlFor="my-modal-6"
+                  className="btn btn-xs btn-outline btn-success"
                 >
                   Update
                 </label>

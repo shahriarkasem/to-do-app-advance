@@ -14,14 +14,14 @@ const TaskList = ({ task, handleComplete, handleDelete, refetch, setEditTask }) 
               type="checkbox"
               onClick={() => handleComplete(_id)}
               checked="checked"
-              class="checkbox checkbox-accent"
+              className="checkbox checkbox-accent"
             />
           ) : (
             <input
               type="radio"
               onClick={() => handleComplete(_id)}
               name="radio-4"
-              class="radio radio-accent"
+              className="radio radio-accent"
             />
           )}
           <div className="">
@@ -30,9 +30,9 @@ const TaskList = ({ task, handleComplete, handleDelete, refetch, setEditTask }) 
         </div>
         <div className="flex flex-col">
           <label
-            for="my-modal-6"
+            htmlFor="my-modal-6"
             onClick={() => setEditTask(task)}
-            class="btn btn-xs btn-outline btn-info my-2"
+            className="btn btn-xs btn-outline btn-info my-2"
           >
             Edit
           </label>
