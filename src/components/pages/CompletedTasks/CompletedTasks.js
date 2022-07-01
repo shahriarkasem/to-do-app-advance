@@ -45,7 +45,40 @@ const CompletedTasks = () => {
       });
   };
 
-  
+  const [editTask, setEditTask] = useState(null);
+  const [newDescription, setNewDescription] = useState(editTask?.description);
+
+  useEffect(() => {
+    const newTask = editTask?.description;
+    setNewDescription(newTask);
+  }, [editTask, setNewDescription]);
+
+  const handleEditTask = (event) => {
+    const description = event.target.value;
+    setNewDescription(description);
+  };
+  const updateTaskInfo = (e) => {
+    const id = editTask?._id;
+    const description = newDescription;
+
+    fetch(`http://localhost:5000/update/note`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ description, id }),
+    }).then((res) => {
+      res.json();
+      if (res.status === 200) {
+        refetch();
+        toast.success("Task updated successfully");
+        setEditTask(null);
+      } else {
+        refetch();
+        toast.error("Something went wrong!");
+      }
+    });
+  };
 
   return (
     <section className="text-center">
@@ -65,7 +98,7 @@ const CompletedTasks = () => {
                     handleComplete={handleComplete}
                     handleDelete={handleDelete}
                     refetch={refetch}
-                    
+                    setEditTask={setEditTask}
                   ></TaskList>
                 ))}
             </>
@@ -77,7 +110,44 @@ const CompletedTasks = () => {
           )}
         </div>
       </div>
-     
+      <div>
+        <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+        <div class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <label
+              onClick={() => setEditTask(null)}
+              for="my-modal-6"
+              class="btn btn-sm btn-circle btn-error absolute right-2 top-2"
+            >
+              ✕
+            </label>
+            <div>
+              <div className="form-control w-full max-w-xs">
+                <input
+                  onChange={handleEditTask}
+                  value={newDescription || ""}
+                  type="text"
+                  name="newDescription"
+                  placeholder="New task description"
+                  className="input input-bordered input-primary w-full max-w-xs"
+                  required
+                />
+              </div>
+              <div
+                className="modal-action flex justify-start"
+                onClick={updateTaskInfo}
+              >
+                <label
+                  for="my-modal-6"
+                  class="btn btn-xs btn-outline btn-success"
+                >
+                  Update
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
