@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
@@ -45,6 +45,8 @@ const CompletedTasks = () => {
       });
   };
 
+  
+
   return (
     <section className="text-center">
       <div className="my-5">
@@ -63,6 +65,7 @@ const CompletedTasks = () => {
                     handleComplete={handleComplete}
                     handleDelete={handleDelete}
                     refetch={refetch}
+                    
                   ></TaskList>
                 ))}
             </>
@@ -74,6 +77,7 @@ const CompletedTasks = () => {
           )}
         </div>
       </div>
+     
     </section>
   );
 };
