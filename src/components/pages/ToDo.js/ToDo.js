@@ -120,7 +120,7 @@ const ToDo = () => {
       >
         <input
           className="border-2 p-2 my-1 w-full md:w-1/2 rounded-lg"
-          placeholder="Description"
+          placeholder="Task Description"
           {...register("description")}
           required
         />

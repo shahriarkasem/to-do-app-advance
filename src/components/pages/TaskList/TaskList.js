@@ -38,7 +38,7 @@ const TaskList = ({ task, handleComplete, handleDelete, refetch, setEditTask }) 
           </label>
           <button
             onClick={() => handleDelete(_id)}
-            className="btn btn-xs btn-outline btn-error"
+            className="btn btn-xs btn-outline btn-error mb-2"
           >
             Delete
           </button>
